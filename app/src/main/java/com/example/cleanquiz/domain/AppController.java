@@ -312,6 +312,76 @@ public class AppController {
                         "Arrays.equals()",
                         "contains()"));
                 break;
+            case CLASS:
+                listQuestions.add(new QuestionData("What is a class in Java?",
+                        "A blueprint or template for creating objects.",
+                        "A predefined method that belongs to the object.",
+                        "A variable that holds the state of an object.",
+                        "An instance of an object.",
+                        "A blueprint or template for creating objects."));
+
+                listQuestions.add(new QuestionData("What is an object in Java?",
+                        "An instance of a class.",
+                        "A method that belongs to a class.",
+                        "A variable that holds the state of a class.",
+                        "A template for creating classes.",
+                        "An instance of a class."));
+
+                listQuestions.add(new QuestionData("What is the process of creating an object from a class called in Java?",
+                        "Declaration",
+                        "Instantiation",
+                        "Initialization",
+                        "Construction",
+                        "Instantiation"));
+
+                listQuestions.add(new QuestionData("Which keyword is used to create a new object in Java?",
+                        "this",
+                        "new",
+                        "class",
+                        "instanceof",
+                        "new"));
+
+                listQuestions.add(new QuestionData("What is the purpose of a constructor in Java?",
+                        "To initialize the instance variables of a class.",
+                        "To define methods for a class.",
+                        "To create multiple instances of a class.",
+                        "To access the static variables of a class.",
+                        "To initialize the instance variables of a class."));
+
+                listQuestions.add(new QuestionData("Which access modifier is used to define a class that can be accessed by any other class in the same package?",
+                        "public",
+                        "private",
+                        "protected",
+                        "default",
+                        "default"));
+
+                listQuestions.add(new QuestionData("What is the output of the following code?\npublic class MyClass {\n    public static void main(String[] args) {\n        MyClass obj = new MyClass();\n        System.out.println(obj);\n    }\n}",
+                        "MyClass@<memory_address>",
+                        "MyClass",
+                        "null",
+                        "0",
+                        "MyClass@<memory_address>"));
+
+                listQuestions.add(new QuestionData("What is the purpose of the 'this' keyword in Java?",
+                        "To refer to the superclass.",
+                        "To create a new instance of a class.",
+                        "To access the instance variables and methods of the current object.",
+                        "To access the static variables and methods of a class.",
+                        "To access the instance variables and methods of the current object."));
+
+                listQuestions.add(new QuestionData("Which method is automatically called when an object is created in Java?",
+                        "finalize()",
+                        "destroy()",
+                        "delete()",
+                        "constructor()",
+                        "constructor()"));
+
+                listQuestions.add(new QuestionData("What is the output of the following code?\npublic class MyClass {\n    private int x;\n    public MyClass(int x) {\n        this.x = x;\n    }\n    public int getX() {\n        return x;\n    }\n    public static void main(String[] args) {\n        MyClass obj = new MyClass(5);\n        System.out.println(obj.getX());\n    }\n}",
+                        "0",
+                        "5",
+                        "null",
+                        "MyClass@<memory_address>",
+                        "5"));
         }
     }
 }

@@ -1,5 +1,6 @@
 package com.example.cleanquiz.presentation.category;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -26,6 +27,16 @@ public class CategoryActivity extends AppCompatActivity implements CategoryContr
         findViewById(R.id.strings).setOnClickListener(v-> presenter.setSelectCategory(CategoryEnum.STRING));
         findViewById(R.id.arrays).setOnClickListener(v-> presenter.setSelectCategory(CategoryEnum.ARRAY));
         findViewById(R.id.clas).setOnClickListener(v-> presenter.setSelectCategory(CategoryEnum.CLASS));
+        findViewById(R.id.quit).setOnClickListener(v-> exit());
+    }
+
+    private void exit() {
+        new AlertDialog.Builder(CategoryActivity.this)
+                .setMessage("Are you want to exit?")
+                .setTitle("Exit?")
+                .setPositiveButton("Exit", (dialog, which) -> finish())
+                .setNegativeButton("Cancel", (dialog, which) -> {})
+                .create().show();
     }
 
     @Override
