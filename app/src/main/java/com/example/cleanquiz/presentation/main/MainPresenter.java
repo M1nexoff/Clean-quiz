@@ -27,6 +27,7 @@ public class MainPresenter implements MainContract.Presenter {
     }
 
     private void loadQuestionByPos() {
+        view.showCount(currentPos);
         view.describeQuestion(questionList.get(currentPos));
     }
 
