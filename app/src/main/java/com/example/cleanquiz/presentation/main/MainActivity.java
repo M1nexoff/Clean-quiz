@@ -1,12 +1,16 @@
 package com.example.cleanquiz.presentation.main;
 
+import androidx.activity.OnBackPressedCallback;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.AppCompatButton;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.WindowManager;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -31,7 +35,15 @@ public class MainActivity extends AppCompatActivity implements MainContract.View
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
+                WindowManager.LayoutParams.FLAG_FULLSCREEN);
         loadViews();
+        getOnBackPressedDispatcher().addCallback(this, new OnBackPressedCallback(true) {
+            @Override
+            public void handleOnBackPressed() {
+                presenter.finish();
+            }
+        });
         presenter = new MainPresenter(this);
     }
 
@@ -98,9 +110,17 @@ public class MainActivity extends AppCompatActivity implements MainContract.View
 
     @Override
     public void finish(int correctCount) {
-        Intent intent = new Intent(MainActivity.this, WinActivity.class);
-        intent.putExtra("COUNT", correctCount);
-        startActivity(intent);
-        finish();
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setMessage("Are you sure you want to finish?")
+                .setPositiveButton("Yes", (dialog, which) -> {
+                    Intent intent = new Intent(MainActivity.this, WinActivity.class);
+                    intent.putExtra("COUNT", correctCount);
+                    startActivity(intent);
+                    finish();
+                })
+                .setNegativeButton("No", (dialog, which) -> dialog.dismiss())
+                .show();
+
+
     }
 }

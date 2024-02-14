@@ -2,16 +2,18 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#2616DCFF"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical">
     <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
         android:layout_height="?android:actionBarSize">
         <FrameLayout
-            android:background="#009E90"
+            android:background="#CC0736DF"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
             <TextView
+                android:fontFamily="@font/nunito"
                 android:id="@+id/name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -23,6 +25,7 @@
                 android:layout_gravity="center"
                 />
             <ImageView
+                android:backgroundTint="@color/white"
                 android:id="@+id/quit"
                 android:layout_width="30dp"
                 android:layout_height="30dp"
@@ -35,30 +38,34 @@
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#31FFCE"
+        android:background="#2616DCFF"
         tools:context=".MainActivity">
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="#31FFCE"
+            android:layout_height="wrap_content"
+            android:background="#2616DCFF"
             android:orientation="vertical">
             <androidx.cardview.widget.CardView
                 app:cardCornerRadius="20dp"
+                android:outlineProvider="none"
                 android:id="@+id/introduction"
+                android:backgroundTint="#D984ED0A"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="8dp"
+                android:layout_marginVertical="12dp"
+                android:layout_marginHorizontal="16dp"
                 android:orientation="horizontal"
                 android:padding="8dp">
 
                 <TextView
-                    android:padding="40dp"
+                    android:fontFamily="@font/nunito"
+                    android:padding="25dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:text="Kirish"
-                    android:textColor="@color/black"
+                    android:textColor="#FFFFFF"
                     android:textSize="25sp"
                     android:textStyle="bold" />
 
@@ -68,18 +75,21 @@
                 app:cardCornerRadius="20dp"
                 android:id="@+id/types"
                 android:layout_width="match_parent"
+                android:backgroundTint="#EEFF41"
                 android:layout_height="wrap_content"
-                android:layout_margin="8dp"
+                android:layout_marginVertical="12dp"
+                android:layout_marginHorizontal="16dp"
                 android:orientation="horizontal"
                 android:padding="8dp">
 
                 <TextView
-                    android:padding="40dp"
+                    android:fontFamily="@font/nunito"
+                    android:padding="25dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:text="Toifalar"
-                    android:textColor="@color/black"
+                    android:textColor="@color/white"
                     android:textSize="25sp"
                     android:textStyle="bold" />
 
@@ -90,17 +100,20 @@
                 android:id="@+id/strings"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="8dp"
+                android:backgroundTint="#FFD740"
+                android:layout_marginVertical="12dp"
+                android:layout_marginHorizontal="16dp"
                 android:orientation="horizontal"
                 android:padding="8dp">
 
                 <TextView
-                    android:padding="40dp"
+                    android:fontFamily="@font/nunito"
+                    android:padding="25dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:text="Stringlar"
-                    android:textColor="@color/black"
+                    android:textColor="@color/white"
                     android:textSize="25sp"
                     android:textStyle="bold" />
 
@@ -111,17 +124,20 @@
                 android:id="@+id/arrays"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="8dp"
+                android:backgroundTint="#FFAB40"
+                android:layout_marginVertical="12dp"
+                android:layout_marginHorizontal="16dp"
                 android:orientation="horizontal"
                 android:padding="8dp">
 
                 <TextView
-                    android:padding="40dp"
+                    android:fontFamily="@font/nunito"
+                    android:padding="25dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:text="Arraylar"
-                    android:textColor="@color/black"
+                    android:textColor="@color/white"
                     android:textSize="25sp"
                     android:textStyle="bold" />
 
@@ -133,17 +149,20 @@
                 android:id="@+id/clas"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="8dp"
+                android:backgroundTint="#FF6E40"
+                android:layout_marginVertical="12dp"
+                android:layout_marginHorizontal="16dp"
                 android:orientation="horizontal"
                 android:padding="8dp">
 
                 <TextView
-                    android:padding="40dp"
+                    android:fontFamily="@font/nunito"
+                    android:padding="25dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:text="Class va Object"
-                    android:textColor="@color/black"
+                    android:textColor="@color/white"
                     android:textSize="25sp"
                     android:textStyle="bold" />
 

@@ -5,6 +5,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.MotionEvent;
+import android.view.WindowManager;
 
 import com.example.cleanquiz.R;
 import com.example.cleanquiz.data.model.CategoryEnum;
@@ -17,6 +19,8 @@ public class CategoryActivity extends AppCompatActivity implements CategoryContr
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_category);
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
+                WindowManager.LayoutParams.FLAG_FULLSCREEN);
         presenter = new CategoryPresenter(this);
         attachViews();
     }
@@ -43,5 +47,22 @@ public class CategoryActivity extends AppCompatActivity implements CategoryContr
     public void openQuestionActivity() {
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
+    }
+    @Override
+    public boolean onTouchEvent(MotionEvent event) {
+        final int action = event.getActionMasked();
+
+        switch (action) {
+            case MotionEvent.ACTION_POINTER_DOWN:
+                // Check if it's a three-finger touch
+                if (event.getPointerCount() == 3) {
+                    // Consume the event to prevent further processing
+                    return true;
+                }
+                break;
+        }
+
+        // Let the system handle the event for other cases
+        return super.onTouchEvent(event);
     }
 }

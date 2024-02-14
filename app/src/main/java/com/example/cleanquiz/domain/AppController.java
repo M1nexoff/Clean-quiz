@@ -10,24 +10,28 @@ import java.util.List;
 public class AppController {
     private static AppController instance;
     private CategoryEnum selectCategory;
-    List<QuestionData> listQuestions = new ArrayList<QuestionData>();
+    List<QuestionData> listQuestions = new ArrayList<>();
     private AppController(){}
     public static AppController getInstance() {
         if (instance == null)
             instance = new AppController();
         return instance;
     }
-
+    public CategoryEnum getType(){
+        return selectCategory;
+    }
     public void setSelectCategory(CategoryEnum category) {
         this.selectCategory = category;
         loadQuestions();
     }
+
     public List<QuestionData> getQuestionByCategory() {
         Collections.shuffle(listQuestions);
         return listQuestions.subList(0, 10);
     }
     private void loadQuestions() {
         listQuestions.clear();
+
         switch (selectCategory) {
             case INTRODUCTION:
                 listQuestions.add(new QuestionData("What is the syntax for a single-line comment in Java?",
@@ -385,3 +389,4 @@ public class AppController {
         }
     }
 }
+
