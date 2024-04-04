@@ -4,17 +4,24 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#2616DCFF"
+    android:background="#660031E1"
     android:orientation="vertical">
 
-    <LinearLayout
+    <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="56dp"
         android:background="#CC0736DF"
         android:gravity="center"
+        android:layout_gravity="center"
         android:padding="16dp">
-
+        <ImageView
+            android:id="@+id/back"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/back"/>
         <TextView
+            android:layout_gravity="center"
+            android:gravity="center"
             android:fontFamily="@font/nunito"
             android:textColor="@color/white"
             android:id="@+id/count"
@@ -23,9 +30,19 @@
             android:textSize="20dp"
             android:textStyle="bold"
             tools:text="3/21" />
-    </LinearLayout>
-    <ScrollView
+    </FrameLayout>
+    <ProgressBar
+        style="?android:attr/progressBarStyleHorizontal"
         android:layout_width="match_parent"
+        android:layout_height="10dp"
+        android:id="@+id/progress"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:max="100"
+        android:progress="1"/>
+    <ScrollView
+        android:layout_weight="1"
+        android:layout_width="wrap_content"
         android:layout_height="match_parent">
         <FrameLayout
             android:layout_width="match_parent"
@@ -46,20 +63,21 @@
                     app:cardUseCompatPadding="true">
 
                     <TextView
+                        android:gravity="center"
                         android:fontFamily="@font/nunito"
                         android:id="@+id/text_question"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:padding="16dp"
                         android:textColor="@color/white"
-                        android:textSize="20dp"
+                        android:textSize="18dp"
                         tools:text="@tools:sample/avatars" />
                 </androidx.cardview.widget.CardView>
 
                 <androidx.cardview.widget.CardView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginHorizontal="16dp"
+                    android:layout_marginHorizontal="26dp"
                     app:cardBackgroundColor="#02B7FF"
                     android:layout_marginVertical="4dp"
                     app:cardCornerRadius="16dp"
@@ -73,7 +91,7 @@
                         android:layout_height="wrap_content"
                         android:gravity="center"
                         android:paddingHorizontal="24dp"
-                        android:paddingVertical="12dp"
+                        android:paddingVertical="8dp"
                         android:focusable="true">
 
                         <ImageView
@@ -84,12 +102,14 @@
                             />
 
                         <Space
-                            android:layout_width="8dp"
+                            android:layout_width="12dp"
                             android:layout_height="wrap_content" />
 
                         <TextView
+
                             android:fontFamily="@font/nunito"
-                            android:textSize="20dp"
+                            android:textSize="18sp"
+                            android:paddingVertical="4dp"
                             android:textColor="@color/white"
                             android:id="@+id/text_variant_1"
                             android:layout_width="match_parent"
@@ -100,7 +120,7 @@
                 <androidx.cardview.widget.CardView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginHorizontal="16dp"
+                    android:layout_marginHorizontal="26dp"
                     app:cardBackgroundColor="#02B7FF"
                     android:layout_marginVertical="4dp"
                     app:cardCornerRadius="16dp"
@@ -114,7 +134,7 @@
                         android:layout_height="wrap_content"
                         android:gravity="center"
                         android:paddingHorizontal="24dp"
-                        android:paddingVertical="12dp"
+                        android:paddingVertical="8dp"
                         android:focusable="true">
 
                         <ImageView
@@ -125,13 +145,14 @@
                             />
 
                         <Space
-                            android:layout_width="8dp"
+                            android:layout_width="12dp"
                             android:layout_height="wrap_content" />
 
                         <TextView
                             android:fontFamily="@font/nunito"
-                            android:textSize="20dp"
+                            android:textSize="18sp"
                             android:textColor="@color/white"
+                            android:paddingVertical="4dp"
                             android:id="@+id/text_variant_2"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
@@ -141,7 +162,7 @@
                 <androidx.cardview.widget.CardView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginHorizontal="16dp"
+                    android:layout_marginHorizontal="26dp"
                     app:cardBackgroundColor="#02B7FF"
                     android:layout_marginVertical="4dp"
                     app:cardCornerRadius="16dp"
@@ -155,7 +176,7 @@
                         android:layout_height="wrap_content"
                         android:gravity="center"
                         android:paddingHorizontal="24dp"
-                        android:paddingVertical="12dp"
+                        android:paddingVertical="8dp"
                         android:focusable="true">
 
                         <ImageView
@@ -166,12 +187,13 @@
                             />
 
                         <Space
-                            android:layout_width="8dp"
+                            android:layout_width="12dp"
                             android:layout_height="wrap_content" />
 
                         <TextView
                             android:fontFamily="@font/nunito"
-                            android:textSize="20dp"
+                            android:textSize="18sp"
+                            android:paddingVertical="4dp"
                             android:textColor="@color/white"
                             android:id="@+id/text_variant_3"
                             android:layout_width="match_parent"
@@ -182,7 +204,7 @@
                 <androidx.cardview.widget.CardView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginHorizontal="16dp"
+                    android:layout_marginHorizontal="26dp"
                     app:cardBackgroundColor="#02B7FF"
                     android:layout_marginVertical="4dp"
                     app:cardCornerRadius="16dp"
@@ -196,7 +218,7 @@
                         android:layout_height="wrap_content"
                         android:gravity="center"
                         android:paddingHorizontal="24dp"
-                        android:paddingVertical="12dp"
+                        android:paddingVertical="8dp"
                         android:focusable="true">
 
                         <ImageView
@@ -207,12 +229,13 @@
                             />
 
                         <Space
-                            android:layout_width="8dp"
+                            android:layout_width="12dp"
                             android:layout_height="wrap_content" />
 
                         <TextView
                             android:fontFamily="@font/nunito"
-                            android:textSize="20dp"
+                            android:textSize="18sp"
+                            android:paddingVertical="4dp"
                             android:textColor="@color/white"
                             android:id="@+id/text_variant_4"
                             android:layout_width="match_parent"
@@ -220,46 +243,45 @@
                             android:text="@string/app_name" />
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
-
-                <androidx.constraintlayout.widget.ConstraintLayout
-                    android:layout_marginTop="20dp"
-                    android:layout_width="match_parent"
-                    android:layout_height="80dp">
-
-                    <androidx.appcompat.widget.AppCompatButton
-                        android:id="@+id/btn_finish"
-                        android:fontFamily="@font/nunito"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:padding="17dp"
-                        android:background="@drawable/circle"
-                        android:text="Finish"
-                        app:layout_constraintEnd_toStartOf="@id/btn_next"
-                        android:textColor="@color/white"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent" />
-
-                    <androidx.appcompat.widget.AppCompatButton
-                        android:id="@+id/btn_next"
-                        android:fontFamily="@font/nunito"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:background="@drawable/circle"
-                        android:enabled="false"
-                        android:onClick="onNext"
-                        android:padding="17dp"
-                        android:text="Next"
-                        android:textColor="@color/white"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toEndOf="@+id/btn_finish"
-                        app:layout_constraintTop_toTopOf="parent" />
-                </androidx.constraintlayout.widget.ConstraintLayout>
             </LinearLayout>
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"/>
         </FrameLayout>
     </ScrollView>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_weight="4"
+        android:gravity="bottom"
+        android:layout_height="match_parent">
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_finish"
+            android:fontFamily="@font/nunito"
+            android:layout_width="wrap_content"
+            android:layout_height="56dp"
+            android:background="@drawable/button"
+            android:textAllCaps="false"
+            android:text="Finish"
+            app:layout_constraintEnd_toStartOf="@id/btn_next"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_next"
+            android:fontFamily="@font/nunito"
+            android:layout_width="wrap_content"
+            android:layout_height="56dp"
+            android:background="@drawable/button"
+            android:enabled="false"
+            android:onClick="onNext"
+            android:textAllCaps="false"
+            android:textSize="18sp"
+            android:text="Next"
+            android:textColor="@color/white"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/btn_finish"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </LinearLayout>

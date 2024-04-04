@@ -2,18 +2,25 @@ package com.example.cleanquiz.presentation.category;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MotionEvent;
+import android.view.View;
 import android.view.WindowManager;
+import android.widget.FrameLayout;
+import android.widget.LinearLayout;
 
 import com.example.cleanquiz.R;
 import com.example.cleanquiz.data.model.CategoryEnum;
+import com.example.cleanquiz.domain.AppController;
 import com.example.cleanquiz.presentation.main.MainActivity;
+import com.google.android.material.snackbar.Snackbar;
 
 public class CategoryActivity extends AppCompatActivity implements CategoryContract.View{
     private CategoryContract.Presenter presenter;
+    private AppController controller =  AppController.getInstance();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,12 +33,39 @@ public class CategoryActivity extends AppCompatActivity implements CategoryContr
     }
 
     private void attachViews() {
-        findViewById(R.id.introduction).setOnClickListener(v-> presenter.setSelectCategory(CategoryEnum.INTRODUCTION));
-        findViewById(R.id.types).setOnClickListener(v-> presenter.setSelectCategory(CategoryEnum.TYPE));
-        findViewById(R.id.strings).setOnClickListener(v-> presenter.setSelectCategory(CategoryEnum.STRING));
-        findViewById(R.id.arrays).setOnClickListener(v-> presenter.setSelectCategory(CategoryEnum.ARRAY));
-        findViewById(R.id.clas).setOnClickListener(v-> presenter.setSelectCategory(CategoryEnum.CLASS));
+        findViewById(R.id.introduction).setOnClickListener(v-> {
+            presenter.setSelectCategory(CategoryEnum.INTRODUCTION);
+        });
         findViewById(R.id.quit).setOnClickListener(v-> exit());
+
+
+        int[] buttonIds = {R.id.introduction,R.id.types,R.id.strings, R.id.arrays, R.id.clas};
+        CategoryEnum[] categories = {CategoryEnum.INTRODUCTION,CategoryEnum.TYPE,CategoryEnum.STRING, CategoryEnum.ARRAY, CategoryEnum.CLASS};
+
+        for (int i = 1; i < buttonIds.length; i++) {
+            int buttonId = buttonIds[i];
+            CategoryEnum category = categories[i];
+            if (controller.isOpen(category)) {
+                    FrameLayout frame = (FrameLayout)((CardView)((LinearLayout) findViewById(R.id.container)).getChildAt(i)).getChildAt(0);
+                    frame.getChildAt(0).setVisibility(View.VISIBLE);
+                    frame.getChildAt(1).setVisibility(View.INVISIBLE);
+                findViewById(buttonId).setOnClickListener(v -> {
+                    presenter.setSelectCategory(category);
+                });
+
+            } else {
+                findViewById(buttonId).setOnClickListener(v -> {
+                    Snackbar.make(this, findViewById(android.R.id.content), "Done previous test with more than 60% to access this test!", Snackbar.LENGTH_SHORT).show();
+                });
+            }
+        }
+
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        attachViews();
     }
 
     private void exit() {

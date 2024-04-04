@@ -15,9 +15,11 @@ public interface MainContract {
         void nextButtonState(boolean bool);
         void showSelectedIndex(int position);
         void showCount(int currentPos);
+        void fastFinish(int correctCount);
         void finish(int correctCount);
     }
     interface Presenter {
+        int getPos();
         void selectAnswer(int position);
         void clickNextButton();
         void finish();

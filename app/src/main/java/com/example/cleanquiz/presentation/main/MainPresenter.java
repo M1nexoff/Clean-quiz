@@ -32,6 +32,11 @@ public class MainPresenter implements MainContract.Presenter {
     }
 
     @Override
+    public int getPos() {
+        return currentPos;
+    }
+
+    @Override
     public void selectAnswer(int pos) {
         if (pos == this.selectIndex) return;
         if (selectIndex > -1) view.clearOldStates(selectIndex);
@@ -50,7 +55,7 @@ public class MainPresenter implements MainContract.Presenter {
         view.nextButtonState(false);
         currentPos++;
         view.showCount(currentPos);
-        if (currentPos == questionList.size()) view.finish(correctCount);
+        if (currentPos == questionList.size()) view.fastFinish(correctCount);
         else view.describeQuestion(questionList.get(currentPos));
         selectIndex=-1;
     }

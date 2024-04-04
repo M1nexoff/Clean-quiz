@@ -1,7 +1,10 @@
 package com.example.cleanquiz.domain;
 
+import android.content.SharedPreferences;
+
 import com.example.cleanquiz.data.model.CategoryEnum;
 import com.example.cleanquiz.data.model.QuestionData;
+import com.example.cleanquiz.data.source.Pref;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -10,6 +13,7 @@ import java.util.List;
 public class AppController {
     private static AppController instance;
     private CategoryEnum selectCategory;
+    private Pref pref = Pref.getInstance();
     List<QuestionData> listQuestions = new ArrayList<>();
     private AppController(){}
     public static AppController getInstance() {
@@ -28,6 +32,13 @@ public class AppController {
     public List<QuestionData> getQuestionByCategory() {
         Collections.shuffle(listQuestions);
         return listQuestions.subList(0, 10);
+    }
+    public boolean isOpen(CategoryEnum categoryEnum) {
+        return pref.isOpen(categoryEnum);
+    }
+
+    public void setOpen(CategoryEnum categoryEnum) {
+        pref.setOpen(categoryEnum);
     }
     private void loadQuestions() {
         listQuestions.clear();

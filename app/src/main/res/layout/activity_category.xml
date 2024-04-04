@@ -7,7 +7,7 @@
     android:orientation="vertical">
     <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
-        android:layout_height="?android:actionBarSize">
+        android:layout_height="56dp">
         <FrameLayout
             android:background="#CC0736DF"
             android:layout_width="match_parent"
@@ -17,155 +17,218 @@
                 android:id="@+id/name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Java Test"
-                android:layout_marginRight="10dp"
+                android:text="Java Tests"
                 android:textSize="25sp"
                 android:textColor="@color/white"
                 android:textStyle="bold"
                 android:layout_gravity="center"
                 />
+
             <ImageView
-                android:backgroundTint="@color/white"
                 android:id="@+id/quit"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:background="@drawable/quit"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_gravity="center|right"
                 android:layout_marginRight="10dp"
-                android:layout_gravity="center|right"/>
+                android:background="@drawable/quit"
+                android:backgroundTint="@color/white" />
         </FrameLayout>
     </com.google.android.material.appbar.AppBarLayout>
     <ScrollView
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#2616DCFF"
+        android:background="#660031E1"
         tools:context=".MainActivity">
 
         <LinearLayout
+            android:id="@+id/container"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="#2616DCFF"
+            android:background="#00E8FF1A"
             android:orientation="vertical">
             <androidx.cardview.widget.CardView
-                app:cardCornerRadius="20dp"
+                app:cardCornerRadius="10dp"
+                android:elevation="8dp"
                 android:outlineProvider="none"
                 android:id="@+id/introduction"
-                android:backgroundTint="#D984ED0A"
+                android:backgroundTint="#18DCFF"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginVertical="12dp"
-                android:layout_marginHorizontal="16dp"
+                android:layout_marginBottom="12dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginHorizontal="40dp"
                 android:orientation="horizontal"
                 android:padding="8dp">
 
-                <TextView
-                    android:fontFamily="@font/nunito"
-                    android:padding="25dp"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:text="Kirish"
-                    android:textColor="#FFFFFF"
-                    android:textSize="25sp"
-                    android:textStyle="bold" />
+               <FrameLayout
+                   android:layout_gravity="center"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content">
+                   <TextView
+                       android:fontFamily="@font/nunito"
+                       android:padding="25dp"
+                       android:layout_width="wrap_content"
+                       android:layout_height="wrap_content"
+                       android:text="Introduction"
+                       android:textColor="@color/white"
+                       android:textSize="22sp"
+                       android:textStyle="bold" />
+                   <ImageView
+                       android:visibility="invisible"
+                       android:id="@+id/test_1_lock"
+                       android:padding="16dp"
+                       android:layout_gravity="center"
+                       android:layout_width="100dp"
+                       android:layout_height="80dp"
+                       android:src="@drawable/lock"/>
+               </FrameLayout>
 
 
             </androidx.cardview.widget.CardView>
             <androidx.cardview.widget.CardView
-                app:cardCornerRadius="20dp"
+                app:cardCornerRadius="10dp"
+                android:elevation="8dp"
                 android:id="@+id/types"
                 android:layout_width="match_parent"
-                android:backgroundTint="#EEFF41"
+                android:backgroundTint="#40C4FF"
                 android:layout_height="wrap_content"
-                android:layout_marginVertical="12dp"
-                android:layout_marginHorizontal="16dp"
+                android:layout_marginVertical="8dp"
+                android:layout_marginHorizontal="40dp"
                 android:orientation="horizontal"
                 android:padding="8dp">
-
-                <TextView
-                    android:fontFamily="@font/nunito"
-                    android:padding="25dp"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                <FrameLayout
                     android:layout_gravity="center"
-                    android:text="Toifalar"
-                    android:textColor="@color/white"
-                    android:textSize="25sp"
-                    android:textStyle="bold" />
-
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:id="@+id/test_2_text"
+                        android:visibility="invisible"
+                        android:fontFamily="@font/nunito"
+                        android:padding="25dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Types"
+                        android:textColor="@color/white"
+                        android:textSize="22sp"
+                        android:textStyle="bold" />
+                    <ImageView
+                        android:id="@+id/test_2_lock"
+                        android:padding="16dp"
+                        android:layout_gravity="center"
+                        android:layout_width="100dp"
+                        android:layout_height="80dp"
+                        android:src="@drawable/lock"/>
+                </FrameLayout>
 
             </androidx.cardview.widget.CardView>
             <androidx.cardview.widget.CardView
-                app:cardCornerRadius="20dp"
+                app:cardCornerRadius="10dp"
+                android:elevation="8dp"
                 android:id="@+id/strings"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:backgroundTint="#FFD740"
-                android:layout_marginVertical="12dp"
-                android:layout_marginHorizontal="16dp"
+                android:backgroundTint="#536DFE"
+                android:layout_marginVertical="8dp"
+                android:layout_marginHorizontal="40dp"
                 android:orientation="horizontal"
                 android:padding="8dp">
-
-                <TextView
-                    android:fontFamily="@font/nunito"
-                    android:padding="25dp"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                <FrameLayout
                     android:layout_gravity="center"
-                    android:text="Stringlar"
-                    android:textColor="@color/white"
-                    android:textSize="25sp"
-                    android:textStyle="bold" />
-
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:id="@+id/test_3_text"
+                        android:visibility="invisible"
+                        android:fontFamily="@font/nunito"
+                        android:padding="25dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Strings"
+                        android:textColor="@color/white"
+                        android:textSize="22sp"
+                        android:textStyle="bold" />
+                    <ImageView
+                        android:id="@+id/test_3_lock"
+                        android:padding="16dp"
+                        android:layout_gravity="center"
+                        android:layout_width="100dp"
+                        android:layout_height="80dp"
+                        android:src="@drawable/lock"/>
+                </FrameLayout>
 
             </androidx.cardview.widget.CardView>
             <androidx.cardview.widget.CardView
-                app:cardCornerRadius="20dp"
+                app:cardCornerRadius="10dp"
+                android:elevation="8dp"
                 android:id="@+id/arrays"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:backgroundTint="#FFAB40"
-                android:layout_marginVertical="12dp"
-                android:layout_marginHorizontal="16dp"
+                android:backgroundTint="#7C4DFF"
+                android:layout_marginVertical="8dp"
+                android:layout_marginHorizontal="40dp"
                 android:orientation="horizontal"
                 android:padding="8dp">
-
-                <TextView
-                    android:fontFamily="@font/nunito"
-                    android:padding="25dp"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                <FrameLayout
                     android:layout_gravity="center"
-                    android:text="Arraylar"
-                    android:textColor="@color/white"
-                    android:textSize="25sp"
-                    android:textStyle="bold" />
-
-
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:id="@+id/test_4_text"
+                        android:visibility="invisible"
+                        android:fontFamily="@font/nunito"
+                        android:padding="25dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Arrays"
+                        android:textColor="@color/white"
+                        android:textSize="22sp"
+                        android:textStyle="bold" />
+                    <ImageView
+                        android:id="@+id/test_4_lock"
+                        android:padding="16dp"
+                        android:layout_gravity="center"
+                        android:layout_width="100dp"
+                        android:layout_height="80dp"
+                        android:src="@drawable/lock"/>
+                </FrameLayout>
             </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
-                app:cardCornerRadius="20dp"
+                app:cardCornerRadius="10dp"
+                android:elevation="8dp"
                 android:id="@+id/clas"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:backgroundTint="#FF6E40"
-                android:layout_marginVertical="12dp"
-                android:layout_marginHorizontal="16dp"
+                android:backgroundTint="#743CD8"
+                android:layout_marginVertical="8dp"
+                android:layout_marginHorizontal="40dp"
                 android:orientation="horizontal"
                 android:padding="8dp">
 
-                <TextView
-                    android:fontFamily="@font/nunito"
-                    android:padding="25dp"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                <FrameLayout
                     android:layout_gravity="center"
-                    android:text="Class va Object"
-                    android:textColor="@color/white"
-                    android:textSize="25sp"
-                    android:textStyle="bold" />
-
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:id="@+id/test_5_text"
+                        android:visibility="invisible"
+                        android:fontFamily="@font/nunito"
+                        android:padding="25dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Class and Object"
+                        android:textColor="@color/white"
+                        android:textSize="22sp"
+                        android:textStyle="bold" />
+                    <ImageView
+                        android:id="@+id/test_5_lock"
+                        android:padding="16dp"
+                        android:layout_gravity="center"
+                        android:layout_width="100dp"
+                        android:layout_height="80dp"
+                        android:src="@drawable/lock"/>
+                </FrameLayout>
 
             </androidx.cardview.widget.CardView>
 

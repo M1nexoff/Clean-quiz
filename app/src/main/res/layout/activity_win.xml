@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#2616DCFF"
+    android:background="#660031E1"
     android:orientation="vertical"
     tools:context=".presentation.win.WinActivity">
 
@@ -27,6 +27,7 @@
     </LinearLayout>
 
     <TextView
+        android:id="@+id/finish_text"
         android:textColor="@color/white"
         android:paddingVertical="8dp"
         android:background="@drawable/result"
@@ -35,10 +36,11 @@
         android:layout_margin="35dp"
         android:fontFamily="@font/nunito"
         android:gravity="center"
-        android:text="You finished test!\nYour answers"
+        android:text="You finished test !\nYour result !"
         android:textSize="25dp" />
 
     <androidx.cardview.widget.CardView
+        android:layout_weight="2"
         android:outlineProvider="none"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -103,9 +105,8 @@
                 app:layout_constraintTop_toBottomOf="@+id/correct" />
 
             <TextView
-                android:textColor="@color/white"
-
                 android:id="@+id/percentage"
+
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="26dp"
@@ -115,31 +116,41 @@
                 android:gravity="center"
                 android:paddingVertical="10dp"
                 android:text="Percentage: 80%"
+                android:textColor="@color/white"
                 android:textSize="20sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/wrong" />
+                app:layout_constraintTop_toBottomOf="@+id/wrong"
+                app:layout_constraintVertical_bias="1.0" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </androidx.cardview.widget.CardView>
 
-    <LinearLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
+        android:layout_weight="1"
         android:layout_height="wrap_content"
         android:layout_marginTop="36dp"
         android:gravity="center">
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/back"
-            android:textColor="@color/white"
-            android:fontFamily="@font/nunito"
             android:layout_width="100dp"
             android:layout_height="50dp"
             android:layout_gravity="center"
-            android:background="@drawable/circle"
-            android:text="Back" />
-    </LinearLayout>
+            android:layout_marginBottom="24dp"
+            android:background="@drawable/button"
+            android:fontFamily="@font/nunito"
+            android:text="Back"
+            android:textSize="18sp"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </LinearLayout>

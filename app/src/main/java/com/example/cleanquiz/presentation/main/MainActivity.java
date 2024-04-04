@@ -7,11 +7,13 @@ import androidx.appcompat.widget.AppCompatButton;
 
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.WindowManager;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -30,6 +32,7 @@ public class MainActivity extends AppCompatActivity implements MainContract.View
     private List<TextView> texts;
     private AppCompatButton btnNext;
     private AppCompatButton btnFinish;
+    private ImageView btnBack;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,6 +46,7 @@ public class MainActivity extends AppCompatActivity implements MainContract.View
             public void handleOnBackPressed() {
                 presenter.finish();
             }
+
         });
         presenter = new MainPresenter(this);
     }
@@ -50,6 +54,7 @@ public class MainActivity extends AppCompatActivity implements MainContract.View
     private void loadViews() {
         textQuestion = findViewById(R.id.text_question);
         btnNext = findViewById(R.id.btn_next);
+        btnBack = findViewById(R.id.back);
         btnFinish = findViewById(R.id.btn_finish);
         images = new ArrayList<>();
         images.add(findViewById(R.id.image_variant_1));
@@ -75,10 +80,17 @@ public class MainActivity extends AppCompatActivity implements MainContract.View
                 presenter.selectAnswer(index);
             });
         }
+        ((ProgressBar)findViewById(R.id.progress)).getProgressDrawable().setColorFilter(
+                Color.parseColor("#CC0736DF"), android.graphics.PorterDuff.Mode.SRC_IN);
+        btnNext.setOnClickListener(v -> {
+            presenter.clickNextButton();
+            ((ProgressBar)findViewById(R.id.progress)).setProgress(presenter.getPos()*10);
+        });
 
-        btnNext.setOnClickListener(v -> presenter.clickNextButton());
         btnFinish.setOnClickListener(v -> presenter.finish());
+        btnBack.setOnClickListener(v -> presenter.finish());
     }
+
     @Override
     public void describeQuestion(QuestionData data) {
         textQuestion.setText(data.getQuestion());
@@ -109,6 +121,14 @@ public class MainActivity extends AppCompatActivity implements MainContract.View
     }
 
     @Override
+    public void fastFinish(int correctCount) {
+        Intent intent = new Intent(MainActivity.this, WinActivity.class);
+        intent.putExtra("COUNT", correctCount);
+        startActivity(intent);
+        finish();
+    }
+
+    @Override
     public void finish(int correctCount) {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setMessage("Are you sure you want to finish?")
@@ -118,6 +138,7 @@ public class MainActivity extends AppCompatActivity implements MainContract.View
                     startActivity(intent);
                     finish();
                 })
+                .setCancelable(false)
                 .setNegativeButton("No", (dialog, which) -> dialog.dismiss())
                 .show();
 
