@@ -1,3 +1,64 @@
 <resources>
-    <string name="app_name">Clean Quiz</string>
+    <string name="app_name">Quiz App</string>
+    <string name="topic6_question1">What keyword is used to declare a variable in Kotlin?</string>
+    <string name="topic6_question1_option1">var</string>
+    <string name="topic6_question1_option2">val</string>
+    <string name="topic6_question1_option3">const</string>
+    <string name="topic6_question1_option4">let</string>
+
+    <string name="topic6_question2">Which of the following represents a nullable type in Kotlin?</string>
+    <string name="topic6_question2_option1">Int</string>
+    <string name="topic6_question2_option2">String</string>
+    <string name="topic6_question2_option3">Double</string>
+    <string name="topic6_question2_option4">String?</string>
+
+    <string name="topic6_question3">What is the output of the following Kotlin code snippet?
+\n\nfun main() {
+\n    val x: Int? = null
+\n    println(x ?: 0)
+\n}</string>
+    <string name="topic6_question3_option1">0</string>
+    <string name="topic6_question3_option2">1</string>
+    <string name="topic6_question3_option3">Null</string>
+    <string name="topic6_question3_option4">Compilation error</string>
+
+    <string name="topic6_question4">What is the correct syntax for defining a function in Kotlin?</string>
+    <string name="topic6_question4_option1">function add(a: Int, b: Int) { return a + b }</string>
+    <string name="topic6_question4_option2">fun add(a: Int, b: Int): Int { return a + b }</string>
+    <string name="topic6_question4_option3">def add(a: Int, b: Int): Int { return a + b }</string>
+    <string name="topic6_question4_option4">fun add(a: Int, b: Int) -> Int { return a + b }</string>
+
+    <string name="topic6_question5">What is the purpose of the \"let\" function in Kotlin?</string>
+    <string name="topic6_question5_option1">To declare a constant variable</string>
+    <string name="topic6_question5_option2">To perform a null-safe operation</string>
+    <string name="topic6_question5_option3">To define an extension function</string>
+    <string name="topic6_question5_option4">To execute a block of code on a nullable object</string>
+
+    <string name="topic6_question6">Which of the following is the correct way to declare a nullable type in Kotlin?</string>
+    <string name="topic6_question6_option1">String?</string>
+    <string name="topic6_question6_option2">String</string>
+    <string name="topic6_question6_option3">String!</string>
+    <string name="topic6_question6_option4">String??</string>
+
+    <string name="topic6_question7">What is the purpose of the \"apply\" function in Kotlin?</string>
+    <string name="topic6_question7_option1">To execute a block of code on a nullable object</string>
+    <string name="topic6_question7_option2">To initialize the properties of an object</string>
+    <string name="topic6_question7_option3">To define an extension function</string>
+    <string name="topic6_question7_option4">To perform a null-safe operation</string>
+
+    <string name="topic6_question8">What is the output of the following Kotlin code snippet?
+\n\nfun main() {
+\n    val x: String? = null
+\n    println(x ?: "Hello")
+\n}</string>
+    <string name="topic6_question8_option1">null</string>
+    <string name="topic6_question8_option2">Hello</string>
+    <string name="topic6_question8_option3">Compilation error</string>
+    <string name="topic6_question8_option4">Runtime error</string>
+
+    <string name="topic6_question9">What is the correct syntax for a lambda expression in Kotlin?</string>
+    <string name="topic6_question9_option1">{ (a, b) -> a + b }</string>
+    <string name="topic6_question9_option2">{ a, b -> a + b }</string>
+    <string name="topic6_question9_option3">{ (a: Int, b: Int) -> a + b }</string>
+    <string name="topic6_question9_option4">{ Int a, Int b -> a + b }</string>
 </resources>

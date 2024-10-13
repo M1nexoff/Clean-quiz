@@ -19,6 +19,8 @@ import android.widget.Toast;
 
 import com.example.cleanquiz.R;
 import com.example.cleanquiz.data.model.QuestionData;
+import com.example.cleanquiz.presentation.dialog.DialogListener;
+import com.example.cleanquiz.presentation.dialog.QuitAppDialog;
 import com.example.cleanquiz.presentation.win.WinActivity;
 
 import java.util.ArrayList;
@@ -81,7 +83,7 @@ public class MainActivity extends AppCompatActivity implements MainContract.View
             });
         }
         ((ProgressBar)findViewById(R.id.progress)).getProgressDrawable().setColorFilter(
-                Color.parseColor("#CC0736DF"), android.graphics.PorterDuff.Mode.SRC_IN);
+                Color.parseColor("#D9362AED"), android.graphics.PorterDuff.Mode.SRC_IN);
         btnNext.setOnClickListener(v -> {
             presenter.clickNextButton();
             ((ProgressBar)findViewById(R.id.progress)).setProgress(presenter.getPos()*10);
@@ -121,27 +123,34 @@ public class MainActivity extends AppCompatActivity implements MainContract.View
     }
 
     @Override
-    public void fastFinish(int correctCount) {
+    public void fastFinish(int correctCount,int wrongCount) {
         Intent intent = new Intent(MainActivity.this, WinActivity.class);
-        intent.putExtra("COUNT", correctCount);
+        intent.putExtra("CORRECT_COUNT", correctCount);
+        intent.putExtra("WRONG_COUNT", wrongCount);
         startActivity(intent);
         finish();
     }
 
     @Override
-    public void finish(int correctCount) {
-        AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setMessage("Are you sure you want to finish?")
-                .setPositiveButton("Yes", (dialog, which) -> {
-                    Intent intent = new Intent(MainActivity.this, WinActivity.class);
-                    intent.putExtra("COUNT", correctCount);
-                    startActivity(intent);
-                    finish();
-                })
-                .setCancelable(false)
-                .setNegativeButton("No", (dialog, which) -> dialog.dismiss())
-                .show();
+    public void finish(int correctCount,int wrongCount) {
+        QuitAppDialog dialog = new QuitAppDialog(new DialogListener() {
+            @Override
+            public void onYesClicked() {
+                Intent intent = new Intent(MainActivity.this, WinActivity.class);
+                intent.putExtra("CORRECT_COUNT", correctCount);
+                intent.putExtra("WRONG_COUNT", wrongCount);
 
+                startActivity(intent);
+                finish();
+            }
+
+            @Override
+            public void onNoClicked() {
+
+            }
+        }
+        );
+        dialog.show(getSupportFragmentManager(), "QuitDialog");
 
     }
 }

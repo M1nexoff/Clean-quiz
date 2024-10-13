@@ -12,6 +12,7 @@ public class MainPresenter implements MainContract.Presenter {
     private List<QuestionData> questionList;
     private int currentPos = 0;
     private int correctCount = 0;
+    private int wrongCount = 0;
     private int selectIndex = -1;
 
     MainPresenter(MainContract.View view) {
@@ -50,18 +51,20 @@ public class MainPresenter implements MainContract.Presenter {
         QuestionData currentQuestion = questionList.get(currentPos);
         if (currentQuestion.getAnswer().equals(currentQuestion.getVariants()[selectIndex])) {
             this.correctCount ++;
+        }else {
+            wrongCount++;
         }
         view.clearOldStates(selectIndex);
         view.nextButtonState(false);
         currentPos++;
         view.showCount(currentPos);
-        if (currentPos == questionList.size()) view.fastFinish(correctCount);
+        if (currentPos == questionList.size()) view.fastFinish(correctCount,wrongCount);
         else view.describeQuestion(questionList.get(currentPos));
         selectIndex=-1;
     }
 
     @Override
     public void finish() {
-        view.finish(correctCount);
+        view.finish(correctCount,wrongCount);
     }
 }

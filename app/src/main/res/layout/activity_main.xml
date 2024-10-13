@@ -4,13 +4,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#660031E1"
+    android:background="#DFB4F0"
     android:orientation="vertical">
 
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="56dp"
-        android:background="#CC0736DF"
+        android:background="#7A1F9F"
         android:gravity="center"
         android:layout_gravity="center"
         android:padding="16dp">
@@ -27,7 +27,7 @@
             android:id="@+id/count"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="20dp"
+            android:textSize="22dp"
             android:textStyle="bold"
             tools:text="3/21" />
     </FrameLayout>
@@ -58,18 +58,18 @@
                     android:layout_height="wrap_content"
                     android:layout_marginHorizontal="16dp"
                     android:layout_marginVertical="8dp"
-                    app:cardBackgroundColor="#D9362AED"
-                    app:cardCornerRadius="16dp"
+                    app:cardCornerRadius="10dp"
                     app:cardUseCompatPadding="true">
 
                     <TextView
+                        android:background="@drawable/result_2"
                         android:gravity="center"
                         android:fontFamily="@font/nunito"
                         android:id="@+id/text_question"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:padding="16dp"
-                        android:textColor="@color/white"
+                        android:textColor="#7A1F9F"
                         android:textSize="18dp"
                         tools:text="@tools:sample/avatars" />
                 </androidx.cardview.widget.CardView>
@@ -77,20 +77,20 @@
                 <androidx.cardview.widget.CardView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginHorizontal="26dp"
-                    app:cardBackgroundColor="#02B7FF"
+                    android:layout_marginHorizontal="36dp"
                     android:layout_marginVertical="4dp"
-                    app:cardCornerRadius="16dp"
+                    app:cardCornerRadius="10dp"
                     app:cardUseCompatPadding="true">
 
                     <LinearLayout
+
                         android:clickable="true"
-                        android:background="?android:selectableItemBackground"
+                        android:background="@drawable/result"
                         android:id="@+id/container_1"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:gravity="center"
-                        android:paddingHorizontal="24dp"
+                        android:paddingHorizontal="16dp"
                         android:paddingVertical="8dp"
                         android:focusable="true">
 
@@ -98,6 +98,7 @@
                             android:id="@+id/image_variant_1"
                             android:layout_width="30dp"
                             android:layout_height="30dp"
+                            android:padding="2dp"
                             android:src="@drawable/unchecked"
                             />
 
@@ -120,20 +121,20 @@
                 <androidx.cardview.widget.CardView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginHorizontal="26dp"
-                    app:cardBackgroundColor="#02B7FF"
+                    android:layout_marginHorizontal="36dp"
                     android:layout_marginVertical="4dp"
-                    app:cardCornerRadius="16dp"
+                    app:cardCornerRadius="10dp"
                     app:cardUseCompatPadding="true">
 
                     <LinearLayout
+
                         android:clickable="true"
-                        android:background="?android:selectableItemBackground"
+                        android:background="@drawable/result"
                         android:id="@+id/container_2"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:gravity="center"
-                        android:paddingHorizontal="24dp"
+                        android:paddingHorizontal="16dp"
                         android:paddingVertical="8dp"
                         android:focusable="true">
 
@@ -141,6 +142,7 @@
                             android:id="@+id/image_variant_2"
                             android:layout_width="30dp"
                             android:layout_height="30dp"
+                            android:padding="2dp"
                             android:src="@drawable/unchecked"
                             />
 
@@ -162,20 +164,20 @@
                 <androidx.cardview.widget.CardView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginHorizontal="26dp"
-                    app:cardBackgroundColor="#02B7FF"
+                    android:layout_marginHorizontal="36dp"
                     android:layout_marginVertical="4dp"
-                    app:cardCornerRadius="16dp"
+                    app:cardCornerRadius="10dp"
                     app:cardUseCompatPadding="true">
 
                     <LinearLayout
+
                         android:clickable="true"
-                        android:background="?android:selectableItemBackground"
+                        android:background="@drawable/result"
                         android:id="@+id/container_3"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:gravity="center"
-                        android:paddingHorizontal="24dp"
+                        android:paddingHorizontal="16dp"
                         android:paddingVertical="8dp"
                         android:focusable="true">
 
@@ -183,6 +185,7 @@
                             android:id="@+id/image_variant_3"
                             android:layout_width="30dp"
                             android:layout_height="30dp"
+                            android:padding="2dp"
                             android:src="@drawable/unchecked"
                             />
 
@@ -204,20 +207,20 @@
                 <androidx.cardview.widget.CardView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginHorizontal="26dp"
-                    app:cardBackgroundColor="#02B7FF"
+                    android:layout_marginHorizontal="36dp"
                     android:layout_marginVertical="4dp"
-                    app:cardCornerRadius="16dp"
+                    app:cardCornerRadius="10dp"
                     app:cardUseCompatPadding="true">
 
                     <LinearLayout
+
                         android:clickable="true"
-                        android:background="?android:selectableItemBackground"
+                        android:background="@drawable/result"
                         android:id="@+id/container_4"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:gravity="center"
-                        android:paddingHorizontal="24dp"
+                        android:paddingHorizontal="16dp"
                         android:paddingVertical="8dp"
                         android:focusable="true">
 
@@ -225,6 +228,7 @@
                             android:id="@+id/image_variant_4"
                             android:layout_width="30dp"
                             android:layout_height="30dp"
+                            android:padding="2dp"
                             android:src="@drawable/unchecked"
                             />
 
@@ -254,14 +258,15 @@
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btn_finish"
+            android:visibility="gone"
             android:fontFamily="@font/nunito"
-            android:layout_width="wrap_content"
+            android:layout_width="136dp"
             android:layout_height="56dp"
             android:background="@drawable/button"
             android:textAllCaps="false"
             android:text="Finish"
             app:layout_constraintEnd_toStartOf="@id/btn_next"
-            android:textColor="@color/white"
+            android:textColor="#7A1F9F"
             android:textSize="18sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -270,7 +275,7 @@
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btn_next"
             android:fontFamily="@font/nunito"
-            android:layout_width="wrap_content"
+            android:layout_width="136dp"
             android:layout_height="56dp"
             android:background="@drawable/button"
             android:enabled="false"
@@ -278,7 +283,7 @@
             android:textAllCaps="false"
             android:textSize="18sp"
             android:text="Next"
-            android:textColor="@color/white"
+            android:textColor="#7A1F9F"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/btn_finish"

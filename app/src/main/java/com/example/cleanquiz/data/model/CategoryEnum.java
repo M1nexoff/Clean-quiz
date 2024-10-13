@@ -1,5 +1,5 @@
 package com.example.cleanquiz.data.model;
 
 public enum CategoryEnum {
-    INTRODUCTION,TYPE,STRING,ARRAY,CLASS;
+    KOTLIN,CPP,JAVA,PHP,GO,RUST,JAVASCRIPT;
 }

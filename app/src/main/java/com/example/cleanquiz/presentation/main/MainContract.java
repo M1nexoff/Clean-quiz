@@ -15,8 +15,8 @@ public interface MainContract {
         void nextButtonState(boolean bool);
         void showSelectedIndex(int position);
         void showCount(int currentPos);
-        void fastFinish(int correctCount);
-        void finish(int correctCount);
+        void fastFinish(int correctCount,int wrongCount);
+        void finish(int correctCount,int wrong);
     }
     interface Presenter {
         int getPos();

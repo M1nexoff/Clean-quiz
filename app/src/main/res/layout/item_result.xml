@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- res/layout/item_game_result.xml -->
+<!-- res/layout/item_game_result.xml -->
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_marginHorizontal="16dp"
+    android:layout_marginVertical="8dp"
+    android:elevation="4dp"
+    android:outlineProvider="none"
+    app:cardUseCompatPadding="true"
+    app:cardCornerRadius="8dp">
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/result_2">
+        <TextView
+            android:gravity="center"
+            android:fontFamily="@font/nunito"
+            android:maxLines="1"
+            android:id="@+id/player_name"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="8dp"
+            android:textColor="#7A1F9F"
+            android:textSize="18dp"
+            tools:text="M1nex" />
+        <TextView
+            android:gravity="center"
+            android:fontFamily="@font/nunito"
+            android:maxLines="1"
+            android:id="@+id/correct"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="8dp"
+            android:textColor="#7A1F9F"
+            android:textSize="18dp"
+            tools:text="Correct: 1" />
+        <TextView
+            android:gravity="center"
+            android:fontFamily="@font/nunito"
+            android:maxLines="1"
+            android:id="@+id/wrong"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="8dp"
+            android:textColor="#7A1F9F"
+            android:textSize="18dp"
+            tools:text="Correct: 1" />
+        <TextView
+            android:gravity="center"
+            android:fontFamily="@font/nunito"
+            android:maxLines="1"
+            android:id="@+id/skipped"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="8dp"
+            android:textColor="#7A1F9F"
+            android:textSize="18dp"
+            tools:text="Correct: 1" />
+        <TextView
+            android:gravity="center"
+            android:fontFamily="@font/nunito"
+            android:maxLines="1"
+            android:id="@+id/category"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="8dp"
+            android:textColor="#7A1F9F"
+            android:textSize="18dp"
+            tools:text="Correct: 1" />
+
+    </LinearLayout>
+</androidx.cardview.widget.CardView>
+
+
